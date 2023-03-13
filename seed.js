@@ -15,12 +15,10 @@ const products=[
     },
     {
         name:"ipad pro",
-        img:"https://unsplash.com/photos/hLgYtX0rPgw",
+        img:"https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80",
         price:"1400000",
         desc:"bogot mehgaa"
     },
-
-
 ]
 
 async function seedDB(){
