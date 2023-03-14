@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 // const 
 //let User = require('./models/product');
 
-
 mongoose.set('strictQuery',true)
 let seedDB = require('./seed');
 
