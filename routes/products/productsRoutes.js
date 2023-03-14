@@ -9,5 +9,15 @@ router.get('/products', async (req, res) => {
     res.render('product/index', {products});
 })
 
+router.get('/products/new',(req, res) => {
+    res.render('product/new');
+})
+
+router.post('/products', async(req, res) => {
+    let {name,img,price,desc} = req.body;
+    await Product.create({name:name,img:img,price:price,desc});
+    res.redirect('/products');
+
+})
 
 module.exports = router;
