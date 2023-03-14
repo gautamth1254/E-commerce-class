@@ -9,6 +9,9 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('../partials/navbar') %>
+    <% layout('layouts/boilerplate') -%>
+
     <div class="row">
     <% for(let item of products) { %>
         <div class="col-lg-4 mt-5">

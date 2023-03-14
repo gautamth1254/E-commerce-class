@@ -4,9 +4,10 @@ let path = require('path');
 const mongoose = require('mongoose');
 // const 
 //let User = require('./models/product');
+let ejsMate = require('ejs-mate');
 
 mongoose.set('strictQuery',true)
-let seedDB = require('./seed');
+//let seedDB = require('./seed');
 
 let productsRoutes = require('./routes/products/productsRoutes')
 
@@ -20,7 +21,10 @@ mongoose.connect('mongodb://127.0.0.1:27017/ecommerceclass')
     console.log(err);
 })
 
-seedDB();
+app.engine('ejs', ejsMate)
+
+
+//seedDB();
 
 //app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
