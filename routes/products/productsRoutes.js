@@ -30,4 +30,23 @@ router.get('/products/:id', async(req,res)=>{
 
 })
 
+// to  diplay the edit form
+
+router.get('/products/:id/edit',async(req,res)=>{
+    let {id} = req.params;
+    let foundProduct = await Product.findById(id);
+    res.render('product/edit',{foundProduct});
+})
+
+
+// to actually change the product in db
+
+router.patch('/product/:id',async(req,res)=>{
+    let {id} = req.params;
+    let {name,img,price,desc} = req.body;
+    await Product.findByIdAndUpdate(id, {name,img,price,desc});
+    res.redirect('/products')
+
+
+})
 module.exports = router;
