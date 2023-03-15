@@ -20,4 +20,14 @@ router.post('/products', async(req, res) => {
 
 })
 
+
+// to display perticulat route
+
+router.get('/products/:id', async(req,res)=>{
+    let {id} = req.params;
+    let foundProduct = await Product.findById(id);
+    res.render('product/show',{foundProduct});
+
+})
+
 module.exports = router;

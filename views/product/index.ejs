@@ -13,7 +13,7 @@
     
     <% layout('layouts/boilerplate') -%>
 
-    <div class="row">
+    <div class="row" style="align-items: center;justify-content: center;">
     <% for(let item of products) { %>
         <div class="col-lg-4 mt-5">
             <div class="card" style="width: 18rem;">
@@ -22,7 +22,7 @@
                     <h3 class="card-title"><%= item.name%></h3>
                     <h5 class="card-title"><%= item.price%></h5>
                     <p class="card-text"><%= item.desc%></p>
-                    <a href="#" class="btn btn-primary">View Product</a>
+                    <a href="/products/<%= item._id%>" class="btn btn-primary">View Product</a>
 
                 </div>
                 </div>
