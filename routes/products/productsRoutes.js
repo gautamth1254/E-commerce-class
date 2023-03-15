@@ -15,7 +15,7 @@ router.get('/products/new',(req, res) => {
 
 router.post('/products', async(req, res) => {
     let {name,img,price,desc} = req.body;
-    await Product.create({name:name,img:img,price:price,desc});
+    await Product.create({name,img,price,desc});
     res.redirect('/products');
 
 })
@@ -41,10 +41,10 @@ router.get('/products/:id/edit',async(req,res)=>{
 
 // to actually change the product in db
 
-router.patch('/product/:id',async(req,res)=>{
+router.patch('/products/:id',async(req,res)=>{
     let {id} = req.params;
-    let {name,img,price,desc} = req.body;
-    await Product.findByIdAndUpdate(id, {name,img,price,desc});
+    let {name,price,img,desc} = req.body;
+    await Product.findByIdAndUpdate(id, {name,price,img,desc});
     res.redirect('/products')
 
 
