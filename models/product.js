@@ -21,7 +21,13 @@ let productSchema = new mongoose.Schema({
     desc:{
         type:String,
         trim: true,
-    }
+    },
+    reviews:[
+        {
+            type:mongoose.Schema.Types.ObjectId,  // type jaane k liye kis type ka hai data
+            ref:'Review' // riview wale 
+        }
+    ]
 })
 
 let Product = mongoose.model('Product',productSchema);
