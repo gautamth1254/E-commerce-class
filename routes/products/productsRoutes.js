@@ -46,7 +46,12 @@ router.patch('/products/:id',async(req,res)=>{
     let {name,price,img,desc} = req.body;
     await Product.findByIdAndUpdate(id, {name,price,img,desc});
     res.redirect('/products')
-
-
 })
-module.exports = router;
+
+router.delete('/products/:id',async(req,res)=>{
+    let {id} = req.params;
+    await Product.findByIdAndDelete(id);
+    res.redirect('/products');
+})
+
+module.exports = router;    
