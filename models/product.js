@@ -15,7 +15,7 @@ let productSchema = new mongoose.Schema({
     price:{
         type:Number,
         min:0,
-        default:"price missing",
+        // default:"price missing",
         required:true        
     },
     desc:{

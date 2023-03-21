@@ -6,6 +6,7 @@ let seedDB = require('./seed');
 let productRoutes = require('./routes/products/productsRoutes')
 let ejsMate = require('ejs-mate');
 var methodOverride = require('method-override');
+let reviewRoutes = require('./routes/review/review');
 
 
 mongoose.set('strictQuery' , true);
@@ -23,7 +24,7 @@ app.set('view engine' , 'ejs');
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname , 'public'))); //static files
 app.use(productRoutes);
-
+app.use(reviewRoutes);
 // seedDB();
 
 let port = 5000;

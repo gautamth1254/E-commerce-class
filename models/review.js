@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-let productSchema = new mongoose.Schema({
+let reviewSchema = new mongoose.Schema({
     rating:{
         type:Number,
         min:0,
@@ -13,8 +13,8 @@ let productSchema = new mongoose.Schema({
     },
 })
 
-let Product = mongoose.model('Product',productSchema);
+let Review = mongoose.model('Review',reviewSchema);
 
-module.exports = Product;
+module.exports = Review;
 // Samarth0606
 // ecommerce-g13
